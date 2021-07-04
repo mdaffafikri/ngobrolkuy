@@ -2,7 +2,8 @@ import io from 'socket.io-client';
 let socket;
 
 export const initiateSocket = (room) => {
-  socket = io('http://localhost:3001', { transports: ['websocket', 'polling', 'flashsocket'] });
+  // socket = io('http://localhost:3001', { transports: ['websocket', 'polling', 'flashsocket'] });
+  socket = io('http://ngobrolkuy.herokuapp.com/', { transports: ['websocket', 'polling', 'flashsocket'] });
   console.log(`Connecting socket...`);
   if (socket && room) {
     socket.emit('join', room)    
